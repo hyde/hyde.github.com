@@ -1,0 +1,166 @@
+<!doctype html>
+<!-- https://github.com/paulirish/html5-boilerplate/blob/master/index.html -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- encoding must be specified within the first 512 bytes
+        www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
+
+  <!-- meta element for compatibility mode needs to be before
+        all elements except title & meta
+        msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx -->
+  <!-- Chrome Frame is only invoked if meta element for
+        compatibility mode is within the first 1K bytes
+        code.google.com/p/chromium/issues/detail?id=23003 -->
+
+  <title>Configuration</title>
+  <meta name="description" content="Awesome documentation for hyde - a python static website generator
+">
+  <meta name="author" content="Lakshmi Vyasarajan">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+      <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+    <link rel="stylesheet" href="/media/css/site.css">
+  <link rel="stylesheet" href="/media/css/syntax.css">
+  
+    <!-- All JavaScript at the bottom, except for Modernizr which
+        enables HTML5 elements & feature detects -->
+    <script src="/media/js/libs/modernizr-1.6.min.js"></script>
+    </head>
+<body id="configuration">
+    <div id="container">
+            <div id="main" role="main">
+          <header class="banner clearfix">
+          <img src="/media/img/hyde-logo-128.png">
+            <h1>hyde 0.6</h1>
+            <h3>static hotness</h3>          </header>
+          <article>
+<hgroup class="article_head">
+    <h1 class="title">Configuration</h1>
+    <h3 class="subtitle">change hyde to match your style</h3>
+</hgroup>
+<p>Hyde is configured using one or more <code>yaml</code> files. On top of all
+the niceties <code>yaml</code> provides out of the box, hyde also adds a few
+power features to manage complex&nbsp;websites.</p>
+<p>If a site has a <code>site.yaml</code> file in the root directory it is used
+as the configuration for generating the website. This can be
+overridden by providing a command line option. See the
+<a href="commandline.html">command line reference</a> for&nbsp;details.</p>
+<h2 id="inheritance">Inheritance</h2>
+<p>Configuration files can inherit from another file using the
+<code>extends</code> option.</p>
+<p>For example, the following configuration will inherit all properties
+from <code>site.yaml</code> and override the <code>mode</code> property.</p>
+<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">site.yaml</span><br /><span class="l-Scalar-Plain">mode</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">production</span><br /></pre></div><br /></div>
+
+<h2 id="paths__urls">Paths <span class="amp">&amp;</span>&nbsp;Urls</h2>
+<p>The following path <span class="amp">&amp;</span> url properties can be defined for use in&nbsp;templates:</p>
+<dl>
+<dt><code>media_root</code></dt>
+<dd>
+<p>The root path where media files(images, css, javascript etc.,)
+can be found. This may be used by plugins for special processing.
+If your website does not have a folder that contains all media,
+you can safely omit this&nbsp;property.</p>
+<p><em>Optional</em>. Default: <code>media</code></p>
+</dd>
+<dt><code>media_url</code></dt>
+<dd>
+<p>The url prefix for serving media files. If you are using a <span class="caps">CDN</span> like
+Amazon S3 or the Rackspace cloud and host all your media files from
+there, you can make use of this property to specify the prefix for
+all media&nbsp;files.</p>
+<p><em>Optional</em>. Default: <code>/media</code></p>
+</dd>
+<dt><code>base_url</code></dt>
+<dd>
+<p>The base url from which the site is served. If you are hosting the
+website in a subdomain or as part of a larger website, you can specify
+this property to indicate the path of this project in your&nbsp;website.</p>
+<p><em>Optional</em>. Default: <code>/</code></p>
+</dd>
+<dt><code>deploy_root</code></dt>
+<dd>
+<p>Where the generated files should go. This can either be a relative
+path from the root of the site source or an absolute path. Note that
+this can also be overridden in the <a href="commandline.html">command line</a> using
+the <code>-d</code> option.</p>
+</dd>
+</dl>
+<h2 id="plugins__templates">Plugins <span class="amp">&amp;</span>&nbsp;templates</h2>
+<dl>
+<dt><code>template</code></dt>
+<dd>
+<p>The template engine to use for processing the website can be specified
+in the configuration file as a python class path. Currently no other
+templates apart from <code>Jinja2</code> are supported, so the <code>template</code> setting
+is a <span class="caps">NOOP</span> at the&nbsp;moment.</p>
+<p><em>Optional</em>. Default: <code>hyde.ext.templates.jinja.Jinja2Template</code></p>
+</dd>
+<dt><code>plugins</code></dt>
+<dd>
+<p>Plugins are specified as list of python class paths. Events that are
+raised during the generation of the website are issued to the plugins
+in the same order as they are listed here. You can learn more about
+how the individual plugins themselves are configured in the
+<a href="plugims">plugin documentations</a>.</p>
+<p><em>Optional</em>. Default: No plugins are&nbsp;loaded.</p>
+<p>The following configuration option would load the metadata plugin
+and the blockdown plugin and execute events in the same&nbsp;order.</p>
+</dd>
+</dl>
+<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.meta.MetaPlugin</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.blockdown.BlockdownPlugin</span><br /></pre></div><br /></div>
+
+<h2 id="context">Context</h2>
+<p>The context section contains key / value pairs that are simply passed
+on to the&nbsp;templates</p>
+<p><em>Optional</em>. Default: No context variables are&nbsp;defined.</p>
+<p>For example, given the following configuration, the statement
+<code>{{hyde.current_version}}</code> in any template
+will output <code>0.6</code>.</p>
+<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">hyde</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">current_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /></div>
+
+<h2 id="providers">Providers</h2>
+<p>Providers are special constructs used to import data into the context.
+For example, data from a database can be exported as <code>yaml</code> and imported
+as&nbsp;providers.</p>
+<p>For example, consider the following&nbsp;snippet:</p>
+<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde-versions.yaml</span><br /></pre></div><br /></div>
+
+<p>This would import the data in <code>hyde-versions.yaml</code> into <code>context[versions]</code>
+and can be used in templates in this manner:
+<code>{{ versions.latest }}</code> assuming that the <code>yaml</code> file contains data about
+the current version of <code>hyde</code>.</p>
+<p></article>
+<aside>
+</aside></p>      </div>
+      <footer>
+    </footer>
+      </div> <!--! end of #container -->
+      <!-- Javascript at the bottom for fast page loading -->
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/media/js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
+  
+    
+      
+  </body>
+</html>
