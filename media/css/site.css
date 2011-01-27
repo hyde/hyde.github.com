@@ -348,6 +348,12 @@ li ul, li ol {
   padding-top: 12px;
   padding-bottom: 0;
 }
+dt {
+  line-height: 24px;
+}
+dd {
+  margin-top: 24px;
+}
 .heading {
   color: #d6d5d5;
   text-shadow: -1px -1px 0px #a4a3a3, 1px 1px 0px #ffffff;
@@ -366,11 +372,18 @@ h6 {
   font-family: "anivers-1", "anivers-2", Helvetica, Arial, sans-serif;
 }
 code, .highlight pre {
-  font-family: menlo, monaco, courier;
+  font-family: "Courier New", courier, monospace;
+  font-size: 80%;
+  line-height: 110%;
 }
 code {
   color: rgba(0, 0, 0, 0.5);
-  font-size: 80%;
+}
+ul > li {
+  list-style-type: square;
+}
+li ul > li {
+  list-style-type: circle;
 }
 .amp {
   font-family: Baskerville, Palatino, "Book Antiqua", serif;
@@ -453,7 +466,7 @@ header.banner {
   width: 100%;
   height: 144px;
   position: relative;
-  margin-bottom: 48px;
+  margin-bottom: 46px;
 }
 header.banner img {
   display: block;
@@ -475,7 +488,7 @@ header.banner h3 {
   color: #010202;
   color: rgba(0, 0, 0, 0.5);
   position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   font-size: 24px;
   left: 266px;
   margin: 0;
@@ -491,7 +504,7 @@ article {
 article h1.title {
   color: #497c55;
   font-size: 36px;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 article h3.subtitle {
   color: #453f19;
@@ -499,13 +512,15 @@ article h3.subtitle {
   font-weight: normal;
   padding-left: 6px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  margin-bottom: 21px;
+  margin-bottom: 22px;
 }
 .highlight pre {
-  font-size: 11px;
+  font-size: 12px;
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  padding: 18px 12px;
+  padding: 16px 12px 12px;
+  line-height: 24px;
+  margin-bottom: 8px;
 }
