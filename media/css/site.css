@@ -354,6 +354,9 @@ dt {
 dd {
   margin-top: 24px;
 }
+.blurb {
+  background-color: #d4ffe3;
+}
 .heading {
   color: #d6d5d5;
   text-shadow: -1px -1px 0px #a4a3a3, 1px 1px 0px #ffffff;
@@ -458,6 +461,7 @@ a:link {
   padding: 0 0 24px 0;
 }
 h2 {
+  margin: 48px 0 24px;
   font-size: 24px;
   color: #453f19;
   line-height: 24px;
