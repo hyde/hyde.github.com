@@ -1,0 +1,104 @@
+<!doctype html>
+<!-- https://github.com/paulirish/html5-boilerplate/blob/master/index.html -->
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html lang="en" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+  <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+       Remove this if you use the .htaccess -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <!-- encoding must be specified within the first 512 bytes
+        www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset -->
+
+  <!-- meta element for compatibility mode needs to be before
+        all elements except title & meta
+        msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx -->
+  <!-- Chrome Frame is only invoked if meta element for
+        compatibility mode is within the first 1K bytes
+        code.google.com/p/chromium/issues/detail?id=23003 -->
+
+  <title>Auto Extend Plugin / Hyde Docs</title>
+  <meta name="description" content="Awesome documentation for hyde - a python static website generator
+">
+  <meta name="author" content="Lakshmi Vyasarajan">
+
+  <!--  Mobile viewport optimized: j.mp/bplateviewport -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Place favicon.ico & apple-touch-icon.png
+        in the root of your domain and delete these references -->
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+      <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  
+    <link rel="stylesheet" href="/media/css/site.css">
+  <link rel="stylesheet" href="/media/css/syntax.css">
+  
+    <!-- All JavaScript at the bottom, except for Modernizr which
+        enables HTML5 elements & feature detects -->
+    <script src="/media/js/libs/modernizr-1.6.min.js"></script>
+    </head>
+<body id="autoextend">
+    <div id="container">
+            <div id="main" role="main">
+          <header class="banner clearfix">
+          <img src="/media/img/hyde-logo-128.png">
+            <h1>hyde 0.6</h1>
+            <h3>static hotness</h3>          </header>
+          <article>
+<hgroup class="article_head">
+    <h1 class="title">Auto Extend Plugin</h1>
+    <h3 class="subtitle">type less, think more</h3>
+</hgroup>
+<p>Hyde is built with the goal of separating content from presentation as
+much as possible without losing the power of template inheritance. It is
+a hard balancing act and auto extend is one big step on the&nbsp;wire.</p>
+<h2 id="extend">Extend</h2>
+<p>The auto extend plugin relies on the metadata plugin for its configuration.
+You can specify an <code>extends</code> property in your metadata to let the plugin
+know the base template for that page. The plugin will automatically emit an
+<code>{% extends %}</code> statement in the&nbsp;output.</p>
+<p>The following two configurations are&nbsp;equivalent.</p>
+<div class="code"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span><span class="x"></span><br /><span class="x">&lt;!-- hello.html --&gt;</span><br /><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span><br /><span class="x">Hello World!</span><br /><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span><br /></pre></div><br /></div>
+
+<div class="code"><div class="highlight"><pre><span class="x">===</span><br /><span class="x">extends: base.html</span><br /><span class="x">===</span><br /><span class="x">&lt;!-- hello.html --&gt;</span><br /><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span><br /><span class="x">Hello World!</span><br /><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span><br /></pre></div><br /></div>
+
+<h2 id="default_blocks">Default&nbsp;blocks</h2>
+<p>It gets even better. The auto extend plugin also allows you to specify
+the default block so that you can take out another wrapping curly&nbsp;brace.</p>
+<p>The following snippet is equivalent to the above&nbsp;ones:</p>
+<div class="code"><div class="highlight"><pre><span class="x">===</span><br /><span class="x">extends: base.html</span><br /><span class="x">default_block: content</span><br /><span class="x">===</span><br /><span class="x">&lt;!-- hello.html --&gt;</span><br /><span class="x">Hello World!</span><br /></pre></div><br /></div>
+
+<p>As you can see, this makes the page <em>layout free</em>.</p>
+<h2 id="inheritance">Inheritance</h2>
+<p>In combination with metadata inheritance, this plugin can completely
+eliminate redundancy on many&nbsp;sites.</p>
+<p>Given the following configuration, the output would be same as what
+is generated by any of the above&nbsp;snippets.</p>
+<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">site_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Hello World</span> <span class="c1">#site.yaml</span><br /><span class="l-Scalar-Plain">meta</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">base.html</span><br />    <span class="l-Scalar-Plain">default_block</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">content</span><br /></pre></div><br /></div>
+
+<div class="code"><div class="highlight"><pre><span class="x">&lt;!-- hello.html --&gt;</span><br /><span class="x">Hello World</span><br /></pre></div><br /></div>
+
+<p>Just Content!
+</article>
+<aside>
+</aside></p>      </div>
+      <footer>
+    </footer>
+      </div> <!--! end of #container -->
+      <!-- Javascript at the bottom for fast page loading -->
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="/media/js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
+  
+    
+      
+  </body>
+</html>
