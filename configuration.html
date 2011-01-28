@@ -63,7 +63,7 @@ power features to manage complex&nbsp;websites.</p>
 <p>If a site has a <code>site.yaml</code> file in the root directory it is used
 as the configuration for generating the website. This can be
 overridden by providing a command line option. See the
-<a href="commandline.html">command line reference</a> for&nbsp;details.</p>
+<a href="/commandline.html">command line reference</a> for&nbsp;details.</p>
 <h2 id="inheritance">Inheritance</h2>
 <p>Configuration files can inherit from another file using the
 <code>extends</code> option.</p>
@@ -71,6 +71,13 @@ overridden by providing a command line option. See the
 from <code>site.yaml</code> and override the <code>mode</code> property.</p>
 <div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">site.yaml</span><br /><span class="l-Scalar-Plain">mode</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">production</span><br /></pre></div><br /></div>
 
+<p>This is useful for customizing the site to operate in different modes.
+For example, when running locally you may want your media files to
+come from <code>/media</code> but on production you may have a subdomain and want
+the media to come from <code>http://abc.example.com/media</code>.</p>
+<p>This can be accomplished by creating an <em>extended</em> configuration file and
+overriding the media_url property. For a real world example, you can take
+a look at the <a href="https://github.com/hydepy/hyde/blob/master/hyde/layouts/doc/pages.yaml">source of this documentation</a>.</p>
 <h2 id="paths__urls">Paths <span class="amp">&amp;</span>&nbsp;Urls</h2>
 <p>The following path <span class="amp">&amp;</span> url properties can be defined for use in&nbsp;templates:</p>
 <dl>
@@ -101,7 +108,7 @@ this property to indicate the path of this project in your&nbsp;website.</p>
 <dd>
 <p>Where the generated files should go. This can either be a relative
 path from the root of the site source or an absolute path. Note that
-this can also be overridden in the <a href="commandline.html">command line</a> using
+this can also be overridden in the <a href="/commandline.html">command line</a> using
 the <code>-d</code> option.</p>
 </dd>
 </dl>
@@ -121,7 +128,7 @@ is a <span class="caps">NOOP</span> at the&nbsp;moment.</p>
 raised during the generation of the website are issued to the plugins
 in the same order as they are listed here. You can learn more about
 how the individual plugins themselves are configured in the
-<a href="plugims">plugin documentations</a>.</p>
+<a href="/plugins.html">plugin documentation</a>.</p>
 <p><em>Optional</em>. Default: No plugins are&nbsp;loaded.</p>
 <p>The following configuration option would load the metadata plugin
 and the blockdown plugin and execute events in the same&nbsp;order.</p>
@@ -145,10 +152,17 @@ as&nbsp;providers.</p>
 <p>For example, consider the following&nbsp;snippet:</p>
 <div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde-versions.yaml</span><br /></pre></div><br /></div>
 
-<p>This would import the data in <code>hyde-versions.yaml</code> into <code>context[versions]</code>
-and can be used in templates in this manner:
-<code>{{ versions.latest }}</code> assuming that the <code>yaml</code> file contains data about
-the current version of <code>hyde</code>.</p>
+<p>This would import the data in <code>hyde-versions.yaml</code> into <code>context[versions]</code>.
+This data can be used directly in templates in this manner:
+<code>{{ versions.latest }}</code>.</p>
+<h2 id="markdown">Markdown</h2>
+<p>Extensions and extension configuration for markdown can be configured in the
+<code>markdown</code> property. You can read about markdown extensions in
+<a href="http://www.freewisdom.org/projects/python-markdown/Available_Extensions">python markdown documentation</a>.</p>
+<p>The following&nbsp;configuration:</p>
+<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">def_list</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tables</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">headerid</span><br /></pre></div><br /></div>
+
+<p>will use the <a href="http://www.freewisdom.org/projects/python-markdown/Definition_Lists">def_list</a>, <a href="http://www.freewisdom.org/projects/python-markdown/Tables">tables</a> and <a href="http://www.freewisdom.org/projects/python-markdown/HeaderId">headerid</a> extensions in python&nbsp;markdown.</p>
 <p></article>
 <aside>
 </aside></p>      </div>
