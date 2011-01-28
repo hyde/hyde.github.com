@@ -65,7 +65,7 @@
 </ol>
 <h2 id="the_create_command">The create&nbsp;command</h2>
 <p>Creates a new hyde&nbsp;website.</p>
-<div class="code"><div class="highlight"><pre>hyde create<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> create <span class="o">[</span>-l &lt;layout&gt;<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /></div>
+<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre>hyde create<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> create <span class="o">[</span>-l &lt;layout&gt;<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /></div>
 
 <dl>
 <dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
@@ -109,11 +109,11 @@ environment&nbsp;variable</li>
 <p>Assuming the <code>HYDE_DATA</code> environment variable is empty and the folder
 <code>~/test</code> is empty, the following command will create a new hyde site
 at <code>~/test</code> with the contents of <code>layouts/doc</code> folder:</p>
-<div class="code"><div class="highlight"><pre>hyde -s ~/test create -l doc<br /></pre></div><br /></div>
+<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre>hyde -s ~/test create -l doc<br /></pre></div><br /></div>
 
 <h2 id="the_generate_command">The generate&nbsp;command</h2>
 <p>Generates the given&nbsp;website.</p>
-<div class="code"><div class="highlight"><pre>hyde gen<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-d &lt;/deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /></div>
+<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre>hyde gen<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-d &lt;/deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /></div>
 
 <dl>
 <dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
@@ -150,11 +150,11 @@ separator is&nbsp;found.</p>
 </dl>
 <p>The following command will use <code>production.yaml</code> as the configuration file and
 generate the website at <code>~/test</code> to <code>~/production_site</code> directory.</p>
-<div class="code"><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />hyde gen -c production.yaml -d ~/production_site<br /></pre></div><br /></div>
+<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />hyde gen -c production.yaml -d ~/production_site<br /></pre></div><br /></div>
 
 <h2 id="the_serve_command">The serve&nbsp;command</h2>
 <p>Starts the built in web server that also regenerates based on the request if there are&nbsp;changes.</p>
-<div class="code"><div class="highlight"><pre>hyde serve<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-d &lt;/deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /></div>
+<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre>hyde serve<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-d &lt;/deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /></div>
 
 <dl>
 <dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
@@ -181,7 +181,7 @@ the same purpose here as in the <code>gen</code> command.</p>
 <p>The following command will serve the website at <code>http://localhost:8181</code></p>
 </dd>
 </dl>
-<div class="code"><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />hyde serve -p 8181<br /></pre></div><br /></div>
+<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />hyde serve -p 8181<br /></pre></div><br /></div>
 
 <p></article>
 <aside>

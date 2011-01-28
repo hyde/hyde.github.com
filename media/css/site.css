@@ -518,6 +518,16 @@ article h3.subtitle {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 22px;
 }
+.code {
+  position: relative;
+}
+.code figcaption {
+  font-size: 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
 .highlight pre {
   font-size: 12px;
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);

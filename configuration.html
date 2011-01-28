@@ -69,7 +69,7 @@ overridden by providing a command line option. See the
 <code>extends</code> option.</p>
 <p>For example, the following configuration will inherit all properties
 from <code>site.yaml</code> and override the <code>mode</code> property.</p>
-<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">site.yaml</span><br /><span class="l-Scalar-Plain">mode</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">production</span><br /></pre></div><br /></div>
+<div class="code"><figcaption><span class="caps">YAML</span></figcaption><div class="highlight"><pre><span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">site.yaml</span><br /><span class="l-Scalar-Plain">mode</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">production</span><br /></pre></div><br /></div>
 
 <p>This is useful for customizing the site to operate in different modes.
 For example, when running locally you may want your media files to
@@ -134,7 +134,7 @@ how the individual plugins themselves are configured in the
 and the blockdown plugin and execute events in the same&nbsp;order.</p>
 </dd>
 </dl>
-<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.meta.MetaPlugin</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.blockdown.BlockdownPlugin</span><br /></pre></div><br /></div>
+<div class="code"><figcaption><span class="caps">YAML</span></figcaption><div class="highlight"><pre><span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.meta.MetaPlugin</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.blockdown.BlockdownPlugin</span><br /></pre></div><br /></div>
 
 <h2 id="context">Context</h2>
 <p>The context section contains key / value pairs that are simply passed
@@ -143,14 +143,14 @@ on to the&nbsp;templates</p>
 <p>For example, given the following configuration, the statement
 <code>{{hyde.current_version}}</code> in any template
 will output <code>0.6</code>.</p>
-<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">hyde</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">current_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /></div>
+<div class="code"><figcaption><span class="caps">YAML</span></figcaption><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">hyde</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">current_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /></div>
 
 <h2 id="providers">Providers</h2>
 <p>Providers are special constructs used to import data into the context.
 For example, data from a database can be exported as <code>yaml</code> and imported
 as&nbsp;providers.</p>
 <p>For example, consider the following&nbsp;snippet:</p>
-<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde-versions.yaml</span><br /></pre></div><br /></div>
+<div class="code"><figcaption><span class="caps">YAML</span></figcaption><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde-versions.yaml</span><br /></pre></div><br /></div>
 
 <p>This would import the data in <code>hyde-versions.yaml</code> into <code>context[versions]</code>.
 This data can be used directly in templates in this manner:
@@ -160,7 +160,7 @@ This data can be used directly in templates in this manner:
 <code>markdown</code> property. You can read about markdown extensions in
 <a href="http://www.freewisdom.org/projects/python-markdown/Available_Extensions">python markdown documentation</a>.</p>
 <p>The following&nbsp;configuration:</p>
-<div class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">def_list</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tables</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">headerid</span><br /></pre></div><br /></div>
+<div class="code"><figcaption><span class="caps">YAML</span></figcaption><div class="highlight"><pre><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">def_list</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tables</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">headerid</span><br /></pre></div><br /></div>
 
 <p>will use the <a href="http://www.freewisdom.org/projects/python-markdown/Definition_Lists">def_list</a>, <a href="http://www.freewisdom.org/projects/python-markdown/Tables">tables</a> and <a href="http://www.freewisdom.org/projects/python-markdown/HeaderId">headerid</a> extensions in python&nbsp;markdown.</p>
 <p></article>
