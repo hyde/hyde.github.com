@@ -78,7 +78,8 @@ completely consumed by <a href="http://python.org">the dark side</a> and has an
     content if&nbsp;needed.</li>
 </ul>
 <h2 id="install">Install</h2>
-<p>Hyde is available on <a href="http://pypi.python.org/pypi/hyde">pypi</a>.
+<p>Hyde is available on <a href="http://pypi.python.org/pypi/hyde">pypi</a>.</p>
+<p>Installing hyde is as simple as running the following command:
 <figure class="code"><div class="highlight"><pre>pip install hyde<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
 <p>You can find more detailed documentation in the
 <a href="/install">installation section</a>.</p>
@@ -89,11 +90,47 @@ extremely&nbsp;simple.</p>
 <figure class="code"><div class="highlight"><pre>hyde -s /path/to/your/site create<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
 <p>To generate the website:
 <figure class="code"><div class="highlight"><pre><span class="nb">cd</span> /path/to/your/site<br />hyde gen<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
-<p>To run the built in webserver that autogenerates if needed:
+<p>The hyde web server is a simple bare-bones webserver based on the python
+<a href="http://docs.python.org/library/simplehttpserver.html">Simple <span class="caps">HTTP</span> Request Handler</a>.</p>
+<p>The following command starts the built in webserver:
 <figure class="code"><div class="highlight"><pre>hyde serve<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
-<p>You can access the website now at <code>http://localhost:8080</code></p>
+<p>You can access your website now at <code>http://localhost:8080</code>.</p>
+<p>The webserver regenerates the necessary files to serve your request. So, you
+can make your changes and simply refresh your browser to view&nbsp;them.</p>
 <p>For all the supported options, read the
 <a href="/commands">command line documentation</a> or run <code>hyde -h</code>.</p>
+<h2 id="your_first_hyde_website">Your first hyde&nbsp;website</h2>
+<p>Hyde uses the <code>basic</code> layout to generate your website by default. When you
+view your generated website, you will see the following dummy&nbsp;pages:</p>
+<p><figure>
+<a
+    title="The home page"
+    target="_hyde_basic"
+    href="http://emberapp.com/lakshmivyas/images/hyde-basic-home/sizes/o">
+    <img src="http://emberapp.com/lakshmivyas/images/hyde-basic-home/sizes/s.png"
+         alt="The home page">
+</a><a
+    title="List of blog posts"
+    target="_hyde_basic"
+    href="http://emberapp.com/lakshmivyas/images/hyde-basic-list/sizes/o">
+    <img src="http://emberapp.com/lakshmivyas/images/hyde-basic-list/sizes/s.png"
+         alt="List of blog posts">
+</a><a
+    title="A blog post"
+    target="_hyde_basic"
+    href="http://emberapp.com/lakshmivyas/images/hyde-basic-blog-post/sizes/o">
+    <img src="http://emberapp.com/lakshmivyas/images/hyde-basic-blog-post/sizes/s.png"
+         alt="A blog post">
+</a><a
+    title="List of blogs posts with a specific tag"
+    target="_hyde_basic"
+    href="http://emberapp.com/lakshmivyas/images/hyde-basic-tag-list/sizes/o">
+    <img src="http://emberapp.com/lakshmivyas/images/hyde-basic-tag-list/sizes/s.png"
+         alt="List of blogs posts with a specific tag">
+</a><figcaption>Hyde Basic Template - Screenshots</figcaption>
+</figure></p>
+<p>You can now continue to edit the content, layout and styles to customize it to
+your needs. Please see the <a href="/templates">templating guide</a> to get more&nbsp;information.</p>
 <h2 id="source">Source</h2>
 <p>Hyde is <a href="https://github.com/hyde/hyde">socially coded</a>. Feel free to <a href="/contribute">fork</a>.</p>    </article>
     <aside>
@@ -121,7 +158,7 @@ extremely&nbsp;simple.</p>
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
                     href="/server.html">
-                    Webserver</a><li>
+                    Hyde web&nbsp;server</a><li>
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
                     href="/config.html">

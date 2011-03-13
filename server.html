@@ -22,7 +22,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Webserver</title>
+  <title>Hyde web server</title>
   <meta name="description" content="Awesome documentation for hyde - a python static website generator
 ">
   <meta name="author" content="Lakshmi Vyasarajan">
@@ -55,10 +55,26 @@
           <div class="doc">
     <article>
     <hgroup>
-        <h1 class="title">Webserver</h1>
+        <h1 class="title">Hyde web server</h1>
         <h3 class="subtitle">Serving hyde websites</h3>
     </hgroup>
-        </article>
+    <p>The hyde web server is a simple bare-bones webserver based on the python
+<a href="http://docs.python.org/library/simplehttpserver.html">Simple <span class="caps">HTTP</span> Request Handler</a>.</p>
+<p>The following command starts the built in webserver:
+<figure class="code"><div class="highlight"><pre>hyde serve<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<p>You can access your website now at <code>http://localhost:8080</code>.</p>
+<p>The webserver regenerates the necessary files to serve your request. So, you
+can make your changes and simply refresh your browser to view&nbsp;them.</p>
+<h2 id="special_parameters">Special&nbsp;Parameters</h2>
+<p>The hyde webserver supports just one special parameter. <code>refresh</code>.</p>
+<p>If you add <code>?refresh</code> to the url, the server regenerates the site
+completely and refreshes your browser. Note that for larger sites, this may
+take a few seconds to&nbsp;complete.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Information about dependencies between pages are stored in your site root
+directory in the <code>.hyde_deps</code> file. If regeneration is not consistent with
+your expectations, you can simply delete this file and hyde will build the
+dependency tree&nbsp;again.</p>    </article>
     <aside>
         <ul class="toc">
         <li><mark class="version">Version: 0.8</mark></li>
@@ -84,7 +100,7 @@
                 <a class="active"                    title="Awesome documentation for hyde - a python static website generator
 "
                     href="/server.html">
-                    Webserver</a><li>
+                    Hyde web&nbsp;server</a><li>
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
                     href="/config.html">

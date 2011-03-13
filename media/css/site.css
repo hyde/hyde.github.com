@@ -461,6 +461,10 @@ a:link {
   margin: 3px 12px 8.399999999999999px 24px;
   padding: 0 0 24px 0;
 }
+figcaption {
+  text-align: center;
+  font-size: 12px;
+}
 h2 {
   margin: 48px 0 24px;
   font-size: 24px;

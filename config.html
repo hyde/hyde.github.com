@@ -135,21 +135,22 @@ and the blockdown plugin and execute events in the same order.
 <figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.meta.MetaPlugin</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.blockdown.BlockdownPlugin</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
 </dd>
 </dl>
-<h2 id="context">Context</h2>
+<h2 id="context_data">Context&nbsp;Data</h2>
 <p>The context section contains key / value pairs that are simply passed
 on to the&nbsp;templates</p>
 <p><em>Optional</em>. Default: No context variables are&nbsp;defined.</p>
 <p>For example, given the following configuration, the statement
-<code>{{hyde.current_version}}</code> in any template
+<code>{{app.current_version}}</code> in any template
 will output <code>0.6</code>.
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">hyde</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">current_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
-<h2 id="providers">Providers</h2>
+<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">data</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span><br />            <span class="l-Scalar-Plain">current_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+<h2 id="context_data_providers">Context Data&nbsp;Providers</h2>
 <p>Providers are special constructs used to import data into the context.
 For example, data from a database can be exported as <code>yaml</code> and imported
-as&nbsp;providers.</p>
-<p>For example, consider the following snippet:
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde-versions.yaml</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
-<p>This would import the data in <code>hyde-versions.yaml</code> into <code>context[versions]</code>.
+as a&nbsp;provider.</p>
+<p>For example, consider the following snippets:
+<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">app-versions.yaml</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+<p><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /><figcaption>app-versions.yaml</figcaption></figure></p>
+<p>This would import the data in <code>app-versions.yaml</code> into <code>context[versions]</code>.
 This data can be used directly in templates in this manner:
 <code>{{ versions.latest }}</code>.</p>
 <h2 id="markdown">Markdown</h2>
@@ -184,7 +185,7 @@ This data can be used directly in templates in this manner:
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
                     href="/server.html">
-                    Webserver</a><li>
+                    Hyde web&nbsp;server</a><li>
                 <a class="active"                    title="Awesome documentation for hyde - a python static website generator
 "
                     href="/config.html">
@@ -218,7 +219,7 @@ This data can be used directly in templates in this manner:
         <nav class="prevnext">
             <a
                 class="prev"
-                title="Webserver"
+                title="Hyde web server"
                 href="/server.html">
                 &larr;Previous
             </a>            <a
