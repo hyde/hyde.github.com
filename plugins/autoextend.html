@@ -22,7 +22,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Auto Extend Plugin / Hyde Docs</title>
+  <title>Auto Extend Plugin</title>
   <meta name="description" content="Awesome documentation for hyde - a python static website generator
 ">
   <meta name="author" content="Lakshmi Vyasarajan">
@@ -35,8 +35,8 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-      <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
     <link rel="stylesheet" href="/media/css/site.css">
   <link rel="stylesheet" href="/media/css/syntax.css">
@@ -50,14 +50,15 @@
             <div id="main" role="main">
           <header class="banner clearfix">
           <img src="/media/img/hyde-logo-128.png">
-            <h1>hyde 0.6</h1>
-            <h3>static hotness</h3>          </header>
-          <article>
-<hgroup class="article_head">
-    <h1 class="title">Auto Extend Plugin</h1>
-    <h3 class="subtitle">type less, think more</h3>
-</hgroup>
-<p>Hyde is built with the goal of separating content from presentation as
+            <h1>hyde</h1>
+            <h3>A static website generator</h3>          </header>
+          <div class="doc">
+    <article>
+    <hgroup>
+        <h1 class="title">Auto Extend Plugin</h1>
+        <h3 class="subtitle">type less, think more</h3>
+    </hgroup>
+    <p>Hyde is built with the goal of separating content from presentation as
 much as possible without losing the power of template inheritance. It is
 a hard balancing act and auto extend is one big step on the&nbsp;wire.</p>
 <h2 id="extend">Extend</h2>
@@ -65,32 +66,82 @@ a hard balancing act and auto extend is one big step on the&nbsp;wire.</p>
 You can specify an <code>extends</code> property in your metadata to let the plugin
 know the base template for that page. The plugin will automatically emit an
 <code>{% extends %}</code> statement in the&nbsp;output.</p>
-<p>The following two configurations are&nbsp;equivalent.</p>
-<div class="code"><figcaption>hello.html</figcaption><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span><span class="x"></span><br /><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span><br /><span class="x">Hello World!</span><br /><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span><br /></pre></div><br /></div>
-
-<div class="code"><figcaption>hello.html</figcaption><div class="highlight"><pre><span class="x">===</span><br /><span class="x">extends: base.html</span><br /><span class="x">===</span><br /><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span><br /><span class="x">Hello World!</span><br /><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span><br /></pre></div><br /></div>
-
+<p>The following two configurations are equivalent.
+<figure class="code"><div class="highlight"><pre><span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;base.html&quot;</span> <span class="cp">%}</span><span class="x"></span><br /><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span><br /><span class="x">Hello World!</span><br /><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span><br /></pre></div><br /><figcaption>hello.html</figcaption></figure></p>
+<p><figure class="code"><div class="highlight"><pre><span class="x">===</span><br /><span class="x">extends: base.html</span><br /><span class="x">===</span><br /><span class="cp">{%</span> <span class="k">block</span> <span class="nv">content</span> <span class="cp">%}</span><span class="x"></span><br /><span class="x">Hello World!</span><br /><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span><br /></pre></div><br /><figcaption>hello.html</figcaption></figure></p>
 <h2 id="default_blocks">Default&nbsp;blocks</h2>
 <p>It gets even better. The auto extend plugin also allows you to specify
 the default block so that you can take out another wrapping curly&nbsp;brace.</p>
-<p>The following snippet is equivalent to the above&nbsp;ones:</p>
-<div class="code"><figcaption>hello.html</figcaption><div class="highlight"><pre><span class="x">===</span><br /><span class="x">extends: base.html</span><br /><span class="x">default_block: content</span><br /><span class="x">===</span><br /><span class="x">Hello World!</span><br /></pre></div><br /></div>
-
+<p>The following snippet is equivalent to the above ones:
+<figure class="code"><div class="highlight"><pre><span class="x">===</span><br /><span class="x">extends: base.html</span><br /><span class="x">default_block: content</span><br /><span class="x">===</span><br /><span class="x">Hello World!</span><br /></pre></div><br /><figcaption>hello.html</figcaption></figure></p>
 <p>As you can see, this makes the page <em>layout free</em>.</p>
 <h2 id="inheritance">Inheritance</h2>
 <p>In combination with metadata inheritance, this plugin can completely
 eliminate redundancy on many&nbsp;sites.</p>
-<p>Given this&nbsp;configuration:</p>
-<div class="code"><figcaption>site.yaml</figcaption><div class="highlight"><pre><span class="l-Scalar-Plain">site_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Hello World</span><br /><span class="l-Scalar-Plain">meta</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">base.html</span><br />    <span class="l-Scalar-Plain">default_block</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">content</span><br /></pre></div><br /></div>
-
+<p>Given this configuration:
+<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">site_name</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">Hello World</span><br /><span class="l-Scalar-Plain">meta</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">base.html</span><br />    <span class="l-Scalar-Plain">default_block</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">content</span><br /></pre></div><br /><figcaption>site.yaml</figcaption></figure></p>
 <p>the output of the following file be same as what
-is generated by any of the above&nbsp;snippets.</p>
-<div class="code"><figcaption>hello.html</figcaption><div class="highlight"><pre><span class="x">Hello World</span><br /></pre></div><br /></div>
-
-<p>Just content!
-</article>
-<aside>
-</aside></p>      </div>
+is generated by any of the above snippets.
+<figure class="code"><div class="highlight"><pre><span class="x">Hello World</span><br /></pre></div><br /><figcaption>hello.html</figcaption></figure></p>
+<p>Just&nbsp;content!</p>    </article>
+    <aside class="toc">
+        <mark class="version">Version: 0.8</mark>
+        <ul>
+        <li class="topic" id="topic1">
+                        <ul class="links">
+                <li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/overview.html">
+                    Overview</a>                </li>
+            </ul>
+        </li><li class="topic" id="topic2">
+            <h2 class="">Getting&nbsp;Started</h2>            <ul class="links">
+                <li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/install.html">
+                    Installation</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/commands.html">
+                    Command&nbsp;Line</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/server.html">
+                    Webserver</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/config.html">
+                    Configuration</a>                </li>
+            </ul>
+        </li><li class="topic" id="topic3">
+            <h2 class="">Templating&nbsp;Guide</h2>            <ul class="links">
+                <li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/jinja2.html">
+                    Jinja2</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/context.html">
+                    Context&nbsp;Variables</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/markrefer.html">
+                    References</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/text.html">
+                    Text</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/traversing.html">
+                    Traversing</a>                </li>
+            </ul>
+        </li>        </ul>
+    </aside>
+</div>      </div>
       <footer>
     </footer>
       </div> <!--! end of #container -->

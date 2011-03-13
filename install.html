@@ -22,7 +22,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Installation / Hyde Docs</title>
+  <title>Installation</title>
   <meta name="description" content="Awesome documentation for hyde - a python static website generator
 ">
   <meta name="author" content="Lakshmi Vyasarajan">
@@ -35,8 +35,8 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-      <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
     <link rel="stylesheet" href="/media/css/site.css">
   <link rel="stylesheet" href="/media/css/syntax.css">
@@ -50,20 +50,20 @@
             <div id="main" role="main">
           <header class="banner clearfix">
           <img src="/media/img/hyde-logo-128.png">
-            <h1>hyde 0.6</h1>
-            <h3>static hotness</h3>          </header>
-          <article>
-<hgroup class="article_head">
-    <h1 class="title">Installation</h1>
-    <h3 class="subtitle">PIPing hot hyde</h3>
-</hgroup>
-<p>Installing hyde is as simple as running the following&nbsp;command:</p>
-<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre>pip install -e git://github.com/hyde/hyde.git#egg<span class="o">=</span>hyde<br /></pre></div><br /></div>
-
+            <h1>hyde</h1>
+            <h3>A static website generator</h3>          </header>
+          <div class="doc">
+    <article>
+    <hgroup>
+        <h1 class="title">Installation</h1>
+        <h3 class="subtitle">PIPing hot hyde</h3>
+    </hgroup>
+    <p>Installing hyde is as simple as running the following command:
+<figure class="code"><div class="highlight"><pre>pip install hyde<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
 <p>However, based on your choice and use of plugins you may need to install
 additional packages. The requirements for each plugin is outlined in the
 corresponding <a href="/plugins">plugin documentation</a>.</p>
-<h2 id="essential_requirements">Essential&nbsp;Requirements</h2>
+<h2 id="dependencies">Dependencies</h2>
 <p>While your mileage may vary, I consider the following to be essential for
 generating a static website with hyde. These are a part of the requirements
 file and the above command will download and install most of them as part
@@ -74,26 +74,80 @@ pip would install all of the below. However, if you&#8217;d like finer grained
 control over the packages, you can install these&nbsp;individually:</p>
 <ol>
 <li><code>argparse</code>: argparse is required if you are on python&nbsp;2.6.</li>
-<li><code>commando</code>: commando is a wrapper on top of argparse to give better syntax and
-    support for multi-command&nbsp;applications.</li>
-<li><code>Jinja2</code>: While hyde will support many more template languages in the future,
-    currently, Jinja2 is wholly supported and&nbsp;recommended.</li>
-<li><code>Markdown</code>: While there are plans to add support for other markups (textile,
-    restructured text, asciidoc etc..,), markdown is the one thats currently
-    completely&nbsp;supported.</li>
-<li><code>Pyyaml</code>: Much of hyde&#8217;s [configuration] is done using&nbsp;yaml.</li>
+<li><code>commando</code>: commando is a wrapper on top of argparse to give better syntax
+    and support for multi-command&nbsp;applications.</li>
+<li><code>Jinja2</code>: While hyde will support many more template languages in the
+    future, currently, Jinja2 is wholly supported and&nbsp;recommended.</li>
+<li><code>Markdown</code>: While there are plans to add support for other markups
+    (textile, restructured text, asciidoc etc..,), markdown is the one thats
+    currently completely&nbsp;supported.</li>
+<li><code>Pyyaml</code>: Much of hyde&#8217;s <a href="/config">configuration</a> is done using&nbsp;yaml.</li>
 <li><code>pygments</code>: For syntax&nbsp;coloring.</li>
 <li><code>Typogrify</code>: Typogrify automatically fixes and enhances the typographical
     accuracy of your content. While this is not a technical requirement for
-    hyde, it is absolutely essential to create good looking content. Note that
-    this is not installed as part of the above package and must be installed
-    separately. This will be rectified in the&nbsp;future.</li>
+    hyde, it is absolutely essential to create good looking&nbsp;content.</li>
 </ol>
-<div class="code"><figcaption>Bash</figcaption><div class="highlight"><pre>pip install argparse<br />pip install commando<br />pip install jinja2<br />pip install markdown<br />pip install pyyaml<br />pip install pygments<br />pip  install smartypants<br />pip install -e git://github.com/hyde/typogrify#egg<span class="o">=</span>typogrify<br /></pre></div><br /></div>
-
-<p></article>
-<aside>
-</aside></p>      </div>
+<p>The following commands can be used to install the dependencies for hyde
+individually:
+<figure class="code"><div class="highlight"><pre>pip install argparse<br />pip install commando<br />pip install jinja2<br />pip install markdown<br />pip install pyyaml<br />pip install pygments<br />pip install smartypants<br />pip install -e git://github.com/hyde/typogrify#egg<span class="o">=</span>typogrify<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>    </article>
+    <aside class="toc">
+        <mark class="version">Version: 0.8</mark>
+        <ul>
+        <li class="topic" id="topic1">
+                        <ul class="links">
+                <li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/overview.html">
+                    Overview</a>                </li>
+            </ul>
+        </li><li class="topic" id="topic2">
+            <h2 class=" active">Getting&nbsp;Started</h2>            <ul class="links">
+                <li>
+                <a class="active"                    title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/install.html">
+                    Installation</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/commands.html">
+                    Command&nbsp;Line</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/server.html">
+                    Webserver</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/config.html">
+                    Configuration</a>                </li>
+            </ul>
+        </li><li class="topic" id="topic3">
+            <h2 class="">Templating&nbsp;Guide</h2>            <ul class="links">
+                <li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/jinja2.html">
+                    Jinja2</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/context.html">
+                    Context&nbsp;Variables</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/markrefer.html">
+                    References</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/text.html">
+                    Text</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/templates/traversing.html">
+                    Traversing</a>                </li>
+            </ul>
+        </li>        </ul>
+    </aside>
+</div>      </div>
       <footer>
     </footer>
       </div> <!--! end of #container -->

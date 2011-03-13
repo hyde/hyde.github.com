@@ -296,17 +296,16 @@ button {
 a {
   color: #497c55;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #fefdfd;
+  text-shadow: 0px 1px 0px #fff;
 }
 a:hover {
   color: #cd3b16;
-  text-decoration: underline;
-  text-shadow: 0px 1px -1px #fefdfd;
+  text-shadow: 0px 2px 0px #fff;
 }
 body {
   font-family: "ff-meta-web-pro-1", "ff-meta-web-pro-2", Helvetica, Arial, sans-serif;
   color: #132016;
-  background-color: #fefdfd;
+  background-color: #ededed;
 }
 .subheading {
   font-family: "anivers-1", "anivers-2", Helvetica, Arial, sans-serif;
@@ -320,7 +319,7 @@ body {
 #container {
   width: 972px;
   margin: 0 auto 96px;
-  background-color: #fefdfd;
+  background-color: #ededed;
 }
 #main {
   margin: 12px;
@@ -353,13 +352,15 @@ dt {
 }
 dd {
   margin-top: 24px;
+  border-bottom: 2px dashed #ededed;
+  margin-bottom: 22px;
 }
 .blurb {
   background-color: #d4ffe3;
 }
 .heading {
-  color: #d6d5d5;
-  text-shadow: -1px -1px 0px #a4a3a3, 1px 1px 0px #ffffff;
+  color: #497c55;
+  text-shadow: 0px 1px 2px #010202;
 }
 body {
   font-size: 20px;
@@ -400,12 +401,12 @@ li ul > li {
    Also: hot pink. */
 ::-moz-selection {
   background: #497c55;
-  color: #fefdfd;
+  color: #ededed;
   text-shadow: none;
 }
 ::selection {
   background: #497c55;
-  color: #fefdfd;
+  color: #ededed;
   text-shadow: none;
 }
 /*  j.mp/webkit-tap-highlight-color */
@@ -418,7 +419,7 @@ a:link {
 .button:visited {
   background: #497c55;
   padding: 5px 10px 6px;
-  color: #fefdfd;
+  color: #ededed;
   text-decoration: none;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -466,6 +467,13 @@ h2 {
   color: #453f19;
   line-height: 24px;
 }
+figure > br {
+  height: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
 header.banner {
   width: 100%;
   height: 144px;
@@ -477,8 +485,8 @@ header.banner img {
   float: left;
 }
 header.banner h1 {
-  color: #d6d5d5;
-  text-shadow: -1px -1px 0px #a4a3a3, 1px 1px 0px #ffffff;
+  color: #497c55;
+  text-shadow: 0px 1px 2px #010202;
   float: left;
   margin-left: 46px;
   font-size: 96px;
@@ -490,15 +498,66 @@ header.banner h3 {
   font-size: 24px;
   font-weight: normal;
   color: #010202;
-  color: rgba(0, 0, 0, 0.5);
+  color: #010202;
   position: absolute;
   bottom: 10px;
   font-size: 24px;
   left: 266px;
   margin: 0;
-  text-shadow: -1px -1px 0px #a4a3a3, 1px 1px 0px #ffffff;
+  text-shadow: 0px 1px 2px #497c55;
+}
+.doc {
+  position: relative;
+}
+aside.toc {
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  padding: 12px;
+  line-height: 24px;
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  font-size: 12px;
+}
+aside.toc mark.version {
+  color: #010202;
+  font-style: normal;
+  font-weight: normal;
+  background-color: #ededed;
+  padding: 2px 6px;
+  text-shadow: 0px 1px 0px #fff;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  display: block;
+}
+aside.toc a:before {
+  content: '\00a0\00a0';
+}
+aside.toc a.active:before {
+  content: '\00AB';
+}
+aside.toc h2 {
+  margin: 4px 0;
+  font-size: 16px;
+}
+aside.toc h2.active {
+  background-color: #ededed;
+}
+aside.toc ul {
+  padding: 0;
+}
+aside.toc li {
+  margin: 0;
+  list-style-type: none;
 }
 article {
+  background-color: #f7f7f7;
+  text-shadow: 0px 2px 0px #fff;
+  float: left;
   padding: 48px;
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
@@ -520,20 +579,21 @@ article h3.subtitle {
 }
 .code {
   position: relative;
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  background-color: #F0F3F3;
 }
 .code figcaption {
   font-size: 10px;
   position: absolute;
-  bottom: 30px;
+  bottom: 3px;
   right: 12px;
   color: rgba(0, 0, 0, 0.5);
 }
 .highlight pre {
   font-size: 12px;
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   padding: 16px 12px 12px;
   line-height: 24px;
   margin-bottom: 8px;
