@@ -509,19 +509,14 @@ header.banner h3 {
 .doc {
   position: relative;
 }
-aside.toc {
-  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  padding: 12px;
+aside {
   line-height: 24px;
   position: fixed;
-  top: 12px;
-  right: 12px;
+  top: 24px;
+  right: 24px;
   font-size: 12px;
 }
-aside.toc mark.version {
+aside mark.version {
   color: #010202;
   font-style: normal;
   font-weight: normal;
@@ -534,25 +529,47 @@ aside.toc mark.version {
   margin-bottom: 12px;
   display: block;
 }
-aside.toc a:before {
+aside ul {
+  padding: 0;
+}
+aside ul.toc {
+  -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  padding: 12px;
+}
+aside ul.toc li {
+  list-style-type: none;
+}
+aside a:before {
   content: '\00a0\00a0';
 }
-aside.toc a.active:before {
+aside a.active:before {
   content: '\00AB';
 }
-aside.toc h2 {
+aside h2 {
   margin: 4px 0;
   font-size: 16px;
 }
-aside.toc h2.active {
+aside h2.active {
   background-color: #ededed;
 }
-aside.toc ul {
-  padding: 0;
-}
-aside.toc li {
+aside li {
   margin: 0;
   list-style-type: none;
+}
+aside nav.prevnext {
+  margin: 12px 0;
+}
+aside nav.prevnext .prev {
+  display: block;
+  float: left;
+}
+aside nav.prevnext .next {
+  display: block;
+  float: right;
+  padding-right: 9px;
 }
 article {
   background-color: #f7f7f7;
@@ -576,6 +593,17 @@ article h3.subtitle {
   padding-left: 6px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   margin-bottom: 22px;
+}
+footer {
+  position: fixed;
+  color: black;
+  bottom: 0;
+  right: 24px;
+  font-size: 10px;
+  line-height: 12px;
+}
+footer li {
+  list-style-type: none;
 }
 .code {
   position: relative;

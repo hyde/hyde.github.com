@@ -190,10 +190,31 @@ the same purpose here as in the <code>gen</code> command.</p>
 <dd>
 <p>Displays the help text for the <code>serve</code> command.</p>
 </dd>
+</dl>
+<h2 id="the_publish_command">The publish&nbsp;command</h2>
+<p>Publishes the site based on configuration. Currently the only supported
+publishing target is a git repository. See the [publisher documentation][]
+for more information.
+<figure class="code"><div class="highlight"><pre>hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> publish -p &lt;conf&gt; <span class="o">[</span>-m &lt;msg&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<dl>
+<dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
+<dd>
+<p>The path to the site to be&nbsp;generated.</p>
+<p><em>Optional</em> - defaults to current working&nbsp;directory.</p>
+</dd>
+<dt><code>-p CONFIG</code></dt>
+<dd>
+<p>This should point to a configuration section in the site configuration
+that has the settings for the publisher. For&nbsp;example:</p>
+<p>The following configuration (taken from this site) when invoked with
+<code>hyde publish -p github</code> will use the Git publisher to publish the
+generated site to <code>hyde/hyde.github.com</code> repository.
+<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">publisher</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">github</span><span class="p-Indicator">:</span><br />            <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde.ext.publishers.dvcs.Git</span><br />            <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">../hyde.github.com</span><br />            <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">git@github.com:hyde/hyde.github.com.git</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+</dd>
 </dl>    </article>
-    <aside class="toc">
-        <mark class="version">Version: 0.8</mark>
-        <ul>
+    <aside>
+        <ul class="toc">
+        <li><mark class="version">Version: 0.8</mark></li>
         <li class="topic" id="topic1">
                         <ul class="links">
                 <li>
@@ -247,8 +268,25 @@ the same purpose here as in the <code>gen</code> command.</p>
                     Traversing</a>                </li>
             </ul>
         </li>        </ul>
+        <nav class="prevnext">
+            <a
+                class="prev"
+                title="Installation"
+                href="/install.html">
+                &larr;Previous
+            </a>            <a
+                class="next"
+                title="Webserver"
+                href="/server.html">
+                Next&rarr;
+            </a>            <br class="clear">
+        </nav>
     </aside>
-</div>      </div>
+</div>
+<footer>
+<p><a href="https://github.com/hyde/hyde">smelted with hyde</a> &mdash;
+<a href="https://github.com/hyde/hyde.github.com/issues">spot <span class="amp">&amp;</span> complain</a> &mdash;
+<a href="https://github.com/hyde/hyde.github.com">fork <span class="amp">&amp;</span>&nbsp;fix</a></p></footer>      </div>
       <footer>
     </footer>
       </div> <!--! end of #container -->
