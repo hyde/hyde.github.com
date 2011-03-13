@@ -22,7 +22,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Hyde - A Python Static Website Generator</title>
+  <title>Overview</title>
   <meta name="description" content="Awesome documentation for hyde - a python static website generator
 ">
   <meta name="author" content="Lakshmi Vyasarajan">
@@ -45,7 +45,7 @@
         enables HTML5 elements & feature detects -->
     <script src="/media/js/libs/modernizr-1.6.min.js"></script>
     </head>
-<body id="less">
+<body id="index">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
@@ -55,17 +55,54 @@
           <div class="doc">
     <article>
     <hgroup>
-        <h1 class="title">Hyde - A Python Static Website Generator</h1>
-        <h3 class="subtitle"></h3>
+        <h1 class="title">Overview</h1>
+        <h3 class="subtitle">hyde in a nutshell</h3>
     </hgroup>
-        </article>
+    <p>Hyde is a static website generator written in python. While Hyde took
+life as <a href="http://jekyllrb.com">awesome Jekyll</a>&apos;s <a href="http://ringce.com/blog/2009/introducing_hyde">evil twin</a>, it has since been
+completely consumed by <a href="http://python.org">the dark side</a> and has an
+<a href="http://groups.google.com/group/hyde-dev/web/hyde-1-0">identity of its own</a>.</p>
+<p>Hyde desires to fulfill the lofty goal of removing the
+<a href="/static/#cons">pain points</a> involved in creating and maintaining
+<a href="[static/#pros]]">static websites</a>.</p>
+<h2 id="spotlight">Spotlight</h2>
+<ul>
+<li>Support for powerful template languages like <a href="http://jinja.pocoo.org/">Jinja2</a> complemented
+    with custom tags and&nbsp;filters.</li>
+<li>Rich <a href="/template/#variables">object model</a> and
+    overridable hierarchical <a href="/plugins/metadata">metadata</a> thats available for use in&nbsp;templates.</li>
+<li>Configurable <a href="/plugins/sorter">sorting, tagging and grouping</a>&nbsp;support.</li>
+<li>Extensible <a href="/plugins">plugin architecture</a> with text preprocessing and <span class="caps">HTML</span>
+    postprocessing support for complex content&nbsp;transformations.</li>
+<li>Instant preview using built-in <a href="/server">webserver</a> that regenerates
+    content if&nbsp;needed.</li>
+</ul>
+<h2 id="install">Install</h2>
+<p>Hyde is available on <a href="http://pypi.python.org/pypi/hyde">pypi</a>.
+<figure class="code"><div class="highlight"><pre>pip install hyde<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<p>You can find more detailed documentation in the
+<a href="/install">installation section</a>.</p>
+<h2 id="run">Run</h2>
+<p>After installation is successful, creating <span class="amp">&amp;</span> generating your website is
+extremely&nbsp;simple.</p>
+<p>To create a new hyde website:
+<figure class="code"><div class="highlight"><pre>hyde -s /path/to/your/site create<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<p>To generate the website:
+<figure class="code"><div class="highlight"><pre><span class="nb">cd</span> /path/to/your/site<br />hyde gen<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<p>To run the built in webserver that autogenerates if needed:
+<figure class="code"><div class="highlight"><pre>hyde serve<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<p>You can access the website now at <code>http://localhost:8080</code></p>
+<p>For all the supported options, read the
+<a href="/commands">command line documentation</a> or run <code>hyde -h</code>.</p>
+<h2 id="source">Source</h2>
+<p>Hyde is <a href="https://github.com/hyde/hyde">socially coded</a>. Feel free to <a href="/contribute">fork</a>.</p>    </article>
     <aside class="toc">
         <mark class="version">Version: 0.8</mark>
         <ul>
         <li class="topic" id="topic1">
                         <ul class="links">
                 <li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
+                <a class="active"                    title="Awesome documentation for hyde - a python static website generator
 "
                     href="/index.html">
                     Overview</a>                </li>
