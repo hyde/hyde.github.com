@@ -22,7 +22,7 @@
         compatibility mode is within the first 1K bytes
         code.google.com/p/chromium/issues/detail?id=23003 -->
 
-  <title>Hyde - A Python Static Website Generator</title>
+  <title>Creating layouts</title>
   <meta name="description" content="Awesome documentation for hyde - a python static website generator
 ">
   <meta name="author" content="Lakshmi Vyasarajan">
@@ -35,8 +35,8 @@
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-      <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
-    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    <script type="text/javascript" src="http://use.typekit.com/hyw1bsz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   
     <link rel="stylesheet" href="/media/css/site.css">
   <link rel="stylesheet" href="/media/css/syntax.css">
@@ -50,34 +50,53 @@
             <div id="main" role="main">
           <header class="banner clearfix">
           <img src="/media/img/hyde-logo-128.png">
-            <h1>hyde 0.8</h1>
+            <h1>hyde</h1>
             <h3>A static website generator</h3>          </header>
           <div class="doc">
     <article>
     <hgroup>
-        <h1 class="title">Hyde - A Python Static Website Generator</h1>
-        <h3 class="subtitle"></h3>
+        <h1 class="title">Creating layouts</h1>
+        <h3 class="subtitle">Overview on writing nice templates for hyde</h3>
     </hgroup>
-        </article>
-    <aside class="toc">
-        <div class="topic active" id="topic0">
-                        <ul class="links">
-                                </li>
-            </ul>
-        </div><div class="topic active" id="topic1">
+    <p>Hyde is designed to support more than one template language for creating
+layouts. However, hyde currently only supports <a href="http://jinja.pocoo.org/">jinja2</a>. This section of the
+documentation will focus on creating templates using&nbsp;jinja2.</p>
+<p>If you are not familiar with jinja2 its a good idea to go through the
+<a href="http://jinja.pocoo.org/docs/templates/">most excellent jinja2 documentation</a>.</p>
+<h2 id="site_structure">Site&nbsp;structure</h2>
+<p>Hyde encourages sepration of content from layout. The following shows a
+typical structure of a hyde website.
+<figure class="code"><div class="highlight"><pre>- content<br />    - media<br />        - css<br />        - js<br />        - images<br />    about.html<br />    index.html<br />    - blog<br />    - projects<br />    - portfolio<br />- layout<br />    base.j2<br />    macros.j2<br />site.yaml<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<p>A good objective is to have all the files in content contain as little layout
+as possible and be written with a text oriented markup language like
+<code>markdown</code>. While its not always possible to achieve 100% sepration, hyde
+provides several nice tools to get very close to that&nbsp;goal.</p>
+<h2 id="context_variables">Context&nbsp;Variables</h2>
+<p>Hyde by default makes the following variables available for&nbsp;templates:</p>
+<ul>
+<li><code>site</code> - Represents the container object of the entire&nbsp;site</li>
+<li><code>node</code> - The node (folder) where the current file&nbsp;resides</li>
+<li><code>resource</code> - The resource (file) that is currently being&nbsp;processed</li>
+<li>Context Variables - All variables defined under the <code>context</code> section of
+    the site configuration are available to the&nbsp;templates.</li>
+</ul>
+<p>Read more information about <code>site</code>, <code>node</code> <span class="amp">&amp;</span> <code>resource</code> variables in
+<a href="/[site_model]">site model documentation</a>.</p>
+<p>Read more information about context variables in the
+<a href="/config#context_data">configuration documentation</a>.</p>    </article>
+    <aside>
+        <ul class="toc">
+        <li><mark class="version">Version: 0.8</mark></li>
+        <li class="topic" id="topic1">
                         <ul class="links">
                 <li>
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
-                    href="/overview.html">
-                    Overview</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/server.html">
-                    Webserver</a>                </li>
+                    href="/index.html">
+                    Overview</a>                </li>
             </ul>
-        </div><div class="topic" id="topic2">
-                        <ul class="links">
+        </li><li class="topic" id="topic2">
+            <h2 class="">Getting&nbsp;Started</h2>            <ul class="links">
                 <li>
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
@@ -89,20 +108,20 @@
                     Command&nbsp;Line</a><li>
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
-                    href="/configuration.html">
+                    href="/server.html">
+                    Hyde web&nbsp;server</a><li>
+                <a                     title="Awesome documentation for hyde - a python static website generator
+"
+                    href="/config.html">
                     Configuration</a>                </li>
             </ul>
-        </div><div class="topic active" id="topic3">
-                        <ul class="links">
+        </li><li class="topic" id="topic3">
+            <h2 class=" active">Templating&nbsp;Guide</h2>            <ul class="links">
                 <li>
                 <a class="active"                    title="Awesome documentation for hyde - a python static website generator
 "
                     href="/templates/index.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/templates/jinja2.html">
-                    Jinja2</a><li>
+                    Creating&nbsp;layouts</a><li>
                 <a                     title="Awesome documentation for hyde - a python static website generator
 "
                     href="/templates/context.html">
@@ -120,52 +139,26 @@
                     href="/templates/traversing.html">
                     Traversing</a>                </li>
             </ul>
-        </div><div class="topic" id="topic4">
-                        <ul class="links">
-                                </li>
-            </ul>
-        </div><div class="topic" id="topic5">
-                        <ul class="links">
-                <li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/extend/index.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/extend/layouts.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/extend/plugins.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/extend/templates.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a>                </li>
-            </ul>
-        </div><div class="topic" id="topic6">
-                        <ul class="links">
-                <li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/switch/hyde-0.5.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/switch/index.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/switch/jekyll.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a><li>
-                <a                     title="Awesome documentation for hyde - a python static website generator
-"
-                    href="/switch/wordpress.html">
-                    Hyde - A Python Static Website&nbsp;Generator</a>                </li>
-            </ul>
-        </div>    </aside>
-</div>      </div>
+        </li>        </ul>
+        <nav class="prevnext">
+            <a
+                class="prev"
+                title="Configuration"
+                href="/config.html">
+                &larr;Previous
+            </a>            <a
+                class="next"
+                title="Context Variables"
+                href="/templates/context.html">
+                Next&rarr;
+            </a>            <br class="clear">
+        </nav>
+    </aside>
+</div>
+<footer>
+<p><a href="https://github.com/hyde/hyde">smelted with hyde</a> &mdash;
+<a href="https://github.com/hyde/hyde.github.com/issues">spot <span class="amp">&amp;</span> complain</a> &mdash;
+<a href="https://github.com/hyde/docs">fork <span class="amp">&amp;</span>&nbsp;fix</a></p></footer>      </div>
       <footer>
     </footer>
       </div> <!--! end of #container -->
