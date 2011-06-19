@@ -70,7 +70,7 @@ overridden by providing a command line option. See the
 <code>extends</code> option.</p>
 <p>For example, the following configuration will inherit all properties
 from <code>site.yaml</code> and override the <code>mode</code> property.
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">site.yaml</span><br /><span class="l-Scalar-Plain">mode</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">production</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">extends</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">site.yaml</span><br /><span class="l-Scalar-Plain">mode</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">production</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></div></p>
 <p>This is useful for customizing the site to operate in different modes.
 For example, when running locally you may want your media files to
 come from <code>/media</code> but on production you may have a subdomain and want
@@ -132,7 +132,7 @@ how the individual plugins themselves are configured in the
 <p><em>Optional</em>. Default: No plugins are&nbsp;loaded.</p>
 <p>The following configuration option would load the metadata plugin
 and the blockdown plugin and execute events in the same order.
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.meta.MetaPlugin</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.blockdown.BlockdownPlugin</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">plugins</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.meta.MetaPlugin</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">hyde.ext.plugins.blockdown.BlockdownPlugin</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></div></p>
 </dd>
 </dl>
 <h2 id="context_data">Context&nbsp;Data</h2>
@@ -142,14 +142,15 @@ on to the&nbsp;templates</p>
 <p>For example, given the following configuration, the statement
 <code>{{app.current_version}}</code> in any template
 will output <code>0.6</code>.
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">data</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span><br />            <span class="l-Scalar-Plain">current_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">data</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">app</span><span class="p-Indicator">:</span><br />            <span class="l-Scalar-Plain">current_version</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></div></p>
 <h2 id="context_data_providers">Context Data&nbsp;Providers</h2>
 <p>Providers are special constructs used to import data into the context.
 For example, data from a database can be exported as <code>yaml</code> and imported
 as a&nbsp;provider.</p>
 <p>For example, consider the following snippets:
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">app-versions.yaml</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
-<p><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /><figcaption>app-versions.yaml</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">context</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">providers</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">versions</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">app-versions.yaml</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></div></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">latest</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">0.6</span><br /></pre></div><br /><figcaption>app-versions.yaml</figcaption></figure></div>
+
 <p>This would import the data in <code>app-versions.yaml</code> into <code>context[versions]</code>.
 This data can be used directly in templates in this manner:
 <code>{{ versions.latest }}</code>.</p>
@@ -158,7 +159,7 @@ This data can be used directly in templates in this manner:
 <code>markdown</code> property. You can read about markdown extensions in
 <a href="http://www.freewisdom.org/projects/python-markdown/Available_Extensions">python markdown documentation</a>.</p>
 <p>The following configuration:
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">def_list</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tables</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">headerid</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">markdown</span><span class="p-Indicator">:</span><br />    <span class="l-Scalar-Plain">extensions</span><span class="p-Indicator">:</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">def_list</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">tables</span><br />        <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">headerid</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></div></p>
 <p>will use the def_list, tables and headerid extensions in python&nbsp;markdown.</p>    </article>
     <aside>
         <ul class="toc">

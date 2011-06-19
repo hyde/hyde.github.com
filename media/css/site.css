@@ -609,6 +609,9 @@ footer {
 footer li {
   list-style-type: none;
 }
+.codebox {
+  margin-bottom: 12px;
+}
 .code {
   position: relative;
   -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);

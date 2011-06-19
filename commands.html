@@ -68,7 +68,7 @@
 </ol>
 <h2 id="the_create_command">The create&nbsp;command</h2>
 <p>Creates a new hyde website.
-<figure class="code"><div class="highlight"><pre>hyde create<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> create <span class="o">[</span>-l &lt;layout&gt;<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre>hyde create<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> create <span class="o">[</span>-l &lt;layout&gt;<span class="o">]</span> <span class="o">[</span>-f<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></div></p>
 <dl>
 <dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
 <dd>
@@ -102,7 +102,7 @@ environment&nbsp;variable</li>
 <p>Assuming the <code>HYDE_DATA</code> environment variable is empty and the folder
 <code>~/test</code> is empty, the following command will create a new hyde site
 at <code>~/test</code> with the contents of <code>layouts/doc</code> folder:
-<figure class="code"><div class="highlight"><pre>hyde -s ~/test create -l doc<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre>hyde -s ~/test create -l doc<br /></pre></div><br /><figcaption>Bash</figcaption></figure></div></p>
 </dd>
 <dt><code>-v, --verbose</code></dt>
 <dd>
@@ -116,7 +116,7 @@ at <code>~/test</code> with the contents of <code>layouts/doc</code> folder:
 </dl>
 <h2 id="the_generate_command">The generate&nbsp;command</h2>
 <p>Generates the given website.
-<figure class="code"><div class="highlight"><pre>hyde gen<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-r<span class="o">]</span> <span class="o">[</span>-d &lt;deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre>hyde gen<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-r<span class="o">]</span> <span class="o">[</span>-d &lt;deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></div></p>
 <dl>
 <dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
 <dd>
@@ -150,7 +150,7 @@ separator is&nbsp;found.</p>
 <p><em>Optional</em> - defaults to <code>site.yaml</code></p>
 <p>The following command will use <code>production.yaml</code> as the configuration file and
 generate the website at <code>~/test</code> to <code>~/production_site</code> directory.
-<figure class="code"><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />    hyde gen -c production.yaml -d ~/production_site<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />    hyde gen -c production.yaml -d ~/production_site<br /></pre></div><br /><figcaption>Bash</figcaption></figure></div></p>
 </dd>
 <dt><code>-v, --verbose</code></dt>
 <dd>
@@ -165,7 +165,7 @@ generate the website at <code>~/test</code> to <code>~/production_site</code> di
 <h2 id="the_serve_command">The serve&nbsp;command</h2>
 <p>Starts the built in web server that also regenerates based on the request if there are
 changes.
-<figure class="code"><div class="highlight"><pre>hyde serve<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-d &lt;/deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre>hyde serve<br />&nbsp;<br />hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> gen <span class="o">[</span>-d &lt;/deploy/path&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></div></p>
 <dl>
 <dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
 <dt><code>-d DEPLOY_PATH, --deploy-path DEPLOY_PATH</code></dt>
@@ -185,7 +185,7 @@ the same purpose here as in the <code>gen</code> command.</p>
 <p>The port to serve the&nbsp;website.</p>
 <p><em>Optional</em> - defaults to <code>8080</code></p>
 <p>The following command will serve the website at <code>http://localhost:8181</code>
-<figure class="code"><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />    hyde serve -p 8181<br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="nb">cd</span> ~/test<br />    hyde serve -p 8181<br /></pre></div><br /><figcaption>Bash</figcaption></figure></div></p>
 </dd>
 <dt><code>-h</code></dt>
 <dd>
@@ -196,7 +196,7 @@ the same purpose here as in the <code>gen</code> command.</p>
 <p>Publishes the site based on configuration. Currently the only supported
 publishing target is a git repository. See the <a href="/publisher">publisher documentation</a>
 for more information.
-<figure class="code"><div class="highlight"><pre>hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> publish -p &lt;conf&gt; <span class="o">[</span>-m &lt;msg&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre>hyde <span class="o">[</span>-s &lt;/site/path&gt;<span class="o">]</span> <span class="o">[</span>-v<span class="o">]</span> publish -p &lt;conf&gt; <span class="o">[</span>-m &lt;msg&gt;<span class="o">]</span> <span class="o">[</span>-c &lt;config/path&gt;<span class="o">]</span> <span class="o">[</span>-h<span class="o">]</span><br /></pre></div><br /><figcaption>Bash</figcaption></figure></div></p>
 <dl>
 <dt><code>-s SITEPATH, --sitepath SITEPATH</code></dt>
 <dd>
@@ -210,7 +210,7 @@ that has the settings for the publisher. For&nbsp;example:</p>
 <p>The following configuration (taken from this site), when invoked with
 <code>hyde publish -p github</code> will use the Git publisher to publish the
 generated site to <code>hyde/hyde.github.com</code> repository.
-<figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">publisher</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">github</span><span class="p-Indicator">:</span><br />            <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde.ext.publishers.dvcs.Git</span><br />            <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">../hyde.github.com</span><br />            <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">git@github.com:hyde/hyde.github.com.git</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></p>
+<div class="codebox"><figure class="code"><div class="highlight"><pre><span class="l-Scalar-Plain">publisher</span><span class="p-Indicator">:</span><br />        <span class="l-Scalar-Plain">github</span><span class="p-Indicator">:</span><br />            <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">hyde.ext.publishers.dvcs.Git</span><br />            <span class="l-Scalar-Plain">path</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">../hyde.github.com</span><br />            <span class="l-Scalar-Plain">url</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">git@github.com:hyde/hyde.github.com.git</span><br /></pre></div><br /><figcaption><span class="caps">YAML</span></figcaption></figure></div></p>
 </dd>
 </dl>    </article>
     <aside>
